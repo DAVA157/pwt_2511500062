@@ -141,6 +141,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
+          <li class="nav-item">
+<a href="logout.php" class="nav-link">
+<i class="nav-icon fas fa-sign-out-alt"></i>
+<p>Logout</p>
+</a>
+</li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -197,12 +203,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </li>
 
 
-<li class="nav-item">
-<a href="logout.php" class="nav-link">
-<i class="nav-icon fas fa-sign-out-alt"></i>
-<p>Logout</p>
-</a>
-</li>
+
                 <a href="#" class="card-link">Card link</a>
                 <a href="#" class="card-link">Another link</a>
               </div>
@@ -278,4 +279,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 </html>
 <br><br>
-<a href="logout.php">Logout</a>
