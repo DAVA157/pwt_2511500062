@@ -1,3 +1,6 @@
+
+
+
 <?php
 session_start();
 
@@ -119,9 +122,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="starter.php?page=mapel" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
+                  <p>Mata Pelajaran</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -181,31 +184,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">dashboard  </h5>
 
                 <p class="card-text">
-                  HALLOOOOO
-                </p>
+                  <?php
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = "";
+}
 
-<li class="nav-item">
-<a href="#" class="nav-link">
-<i class="nav-icon fas fa-user"></i>
-<p>Siswa</p>
-</a>
-</li>
-
-
-<li class="nav-item">
-<a href="#" class="nav-link">
-<i class="nav-icon fas fa-school"></i>
-<p>Kelas</p>
-</a>
-</li>
-
+if ($page == "") {
+    include "page/dashboard.php";
+} elseif (!file_exists("page/$page.php")) {
+    echo "File Tidak Ditemukan";
+} else {
+    include "page/$page.php";
+}
+?>
+</p>
 
 
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+
+                <a href="starter.php?page=tambah_mapel" class="card-link">kembali</a>
+                
               </div>
             </div>
 
