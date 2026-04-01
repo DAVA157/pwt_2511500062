@@ -73,7 +73,7 @@ if (isset($_GET['action'])) {
               </a>
 
               <!-- Tombol Edit -->
-              <a href="index.php?page=edit_mapel&kd=<?= $result['kd_mapel']; ?>" title="Edit">
+              <a href="starter.php?page=edit_mapel&kd=<?= $result['kd_mapel']; ?>" title="Edit">
                 <span class="badge badge-warning">Edit</span>
               </a>
             </td>
