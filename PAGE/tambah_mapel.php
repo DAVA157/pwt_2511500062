@@ -7,16 +7,17 @@ if (!isset($conn)) {
 ?>
 <?php   
 
-$carikode = mysqli_query($conn,"select max(kd_mapel) from mapel") or die (
-    mysqli_error($conn));
-$datakode = mysqli_fetch_array($carikode);
-if($datakode) {
-    $nilaikode = substr($datakode[0], 2);
-    $kode = (int) $nilaikode;
-    $kode = $kode + 1;
-    $hasilkode ="M-".str_pad($kode, 3, "0", STR_PAD_LEFT);
-} else {$hasilkode ="M-"; }
-$_SESSION["KODE"] = $hasilkode;
+$carikode = mysqli_query($conn, "SELECT MAX(kd_mapel) as kode FROM mapel") or die(mysqli_error($conn));
+$data = mysqli_fetch_array($carikode);
+$kode = $data['kode'];
+
+if ($kode == NULL) {
+    $urutan = 1;
+} else {
+    $urutan = (int) substr($kode, 2) + 1;
+}
+
+$hasilkode = "M-" . str_pad($urutan, 3, "0", STR_PAD_LEFT);
 
 if (isset($_POST['tambah'])) {
 
