@@ -28,13 +28,13 @@ if (isset($_POST['tambah'])) {
     $hp = $_POST['hp'];
     $alamat = $_POST['alamat'];
 
-    // VALIDASI
+    
     if (empty($nm_guru) || empty($jenkel)) {
         echo '<div class="alert alert-danger">Data tidak boleh kosong!</div>';
         return;
     }
 
-    // INSERT
+    
     $insert = mysqli_query($conn, "INSERT INTO guru 
     (kd_guru, id_user, nm_guru, jenkel, pend_terakhir, hp, alamat) 
     VALUES 
