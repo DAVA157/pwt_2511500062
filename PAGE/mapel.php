@@ -66,13 +66,13 @@ if (isset($_GET['action'])) {
             <td><?= $result['nm_mapel']; ?></td>
             <td><?= $result['kkm']; ?></td>
             <td>
-              <!-- Tombol Hapus -->
+              
               <a href="index.php?page=mapel&action=hapus&kd=<?= $result['kd_mapel']; ?>"
                  onclick="return confirm('Yakin ingin menghapus data ini?')">
                 <span class="badge badge-danger">Hapus</span>
               </a>
 
-              <!-- Tombol Edit -->
+              
               <a href="starter.php?page=edit_mapel&kd=<?= $result['kd_mapel']; ?>" title="Edit">
                 <span class="badge badge-warning">Edit</span>
               </a>
