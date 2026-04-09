@@ -5,13 +5,13 @@ if (!isset($conn)) {
     die("Koneksi tidak ditemukan!");
 }
 
-// ambil kode dari URL
+
 $kd = $_GET['kd'];
 
-// ambil data guru
+
 $data = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM guru WHERE kd_guru='$kd'"));
 
-// proses update
+
 if (isset($_POST['simpan'])) {
 
     $nm_guru = $_POST['nm_guru'];
@@ -20,13 +20,13 @@ if (isset($_POST['simpan'])) {
     $hp = $_POST['hp'];
     $alamat = $_POST['alamat'];
 
-    // validasi
+    
     if (empty($nm_guru) || empty($jenkel)) {
         echo '<div class="alert alert-danger">Data tidak boleh kosong!</div>';
         return;
     }
 
-    // update
+    
     $update = mysqli_query($conn, "UPDATE guru SET 
         nm_guru='$nm_guru',
         jenkel='$jenkel',

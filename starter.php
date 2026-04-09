@@ -140,7 +140,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="starter.php?page=kelas" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>kelas</p>
+                </a>
+              </li>
 
+                            <li class="nav-item">
+                <a href="starter.php?page=siswa" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>siswa</p>
                 </a>
               </li>
 
@@ -223,7 +229,7 @@ if ($page == "") {
 
 
 
-                <a href="starter.php?page=tambah_mapel" class="card-link">kembali</a>
+                <a href="starter.php?page=dashboard" class="card-link">kembali</a>
                 
               </div>
             </div>

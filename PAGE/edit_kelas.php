@@ -5,13 +5,13 @@ if (!isset($conn)) {
     die("Koneksi tidak ditemukan!");
 }
 
-// Ambil ID dari URL
+
 $kd = $_GET['kd'];
 
-// Ambil data berdasarkan ID
+
 $edit = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM kelas WHERE id_kelas='$kd'"));
 
-// Proses update
+
 if(isset($_POST['simpan'])){
     $id_kelas = $_POST['id_kelas'];
     $nm_kelas = $_POST['nm_kelas'];
