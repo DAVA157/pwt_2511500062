@@ -28,7 +28,6 @@ if (isset($_POST['tambah'])) {
             echo '<div class="alert alert-success">Data Siswa Berhasil Disimpan</div>';
             echo '<meta http-equiv="refresh" content="1;url=starter.php?page=siswa">';
         } else {
-            // Cek jika error karena NIS duplikat
             echo '<div class="alert alert-danger">Gagal Disimpan: ' . mysqli_error($conn) . '</div>';
         }
     }
