@@ -40,6 +40,10 @@ if (isset($_POST['tambah'])) {
     VALUES 
     ('$kd_guru','$id_user','$nm_guru','$jenkel','$pend','$hp','$alamat')");
 
+    $insertuser = mysqli_query($conn, "INSERT INTO admin
+    (username, password, role) 
+    VALUES 
+    ('$kd_guru', '1234', 'guru')");
     if ($insert) {
         echo '<div class="alert alert-success">Berhasil Disimpan</div>';
         echo '<meta http-equiv="refresh" content="1;url=starter.php?page=guru">';
