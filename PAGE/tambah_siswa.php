@@ -22,7 +22,7 @@ if (isset($_POST['tambah'])) {
 
     } else {
 
-        // CEK NIS SUDAH ADA ATAU BELUM
+      
         $cek = mysqli_query($conn, "SELECT * FROM siswa WHERE Nis='$nis'");
 
         if (mysqli_num_rows($cek) > 0) {
@@ -33,13 +33,11 @@ if (isset($_POST['tambah'])) {
 
         } else {
 
-            // SIMPAN KE TABEL SISWA
             $insert = mysqli_query($conn, "INSERT INTO siswa 
             (Nis, Id_user, Nm_siswa, Jenkel, Hp, Id_kelas) 
             VALUES 
             ('$nis', '$id_user', '$nm_siswa', '$jenkel', '$hp', '$id_kelas')");
 
-            // SIMPAN KE TABEL ADMIN
             $insertuser = mysqli_query($conn, "INSERT INTO admin
             (username, password, role) 
             VALUES 

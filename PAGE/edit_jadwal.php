@@ -19,7 +19,7 @@ if (!$data) {
     die("Data tidak ditemukan!");
 }
 
-// PROSES UPDATE
+
 if (isset($_POST['update'])) {
 
     $id_kelas   = $_POST['id_kelas'];

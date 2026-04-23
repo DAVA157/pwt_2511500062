@@ -5,10 +5,10 @@ if (!isset($conn)) {
     die("Koneksi tidak ditemukan!");
 }
 
-// Ambil NIS dari URL
+
 $kd = $_GET['kd'];
 
-// Ambil data siswa
+
 $data = mysqli_fetch_assoc(
     mysqli_query($conn, "SELECT * FROM siswa WHERE Nis='$kd'")
 );
@@ -17,7 +17,7 @@ if (!$data) {
     die("Data tidak ditemukan!");
 }
 
-// Proses update
+
 if (isset($_POST['simpan'])) {
 
     $id_user  = $_POST['id_user'];
