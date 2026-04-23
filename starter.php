@@ -246,7 +246,7 @@ if ($page == "") {
 
 
 
-                <a href="starter.php?page=ganti_password" class="card-link">kembali</a>
+                <a href="starter.php?page=dashboard" class="card-link">kembali</a>
                 
               </div>
             </div>
