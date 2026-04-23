@@ -46,7 +46,7 @@ if (isset($_POST['login'])) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
+<title>Login Modern</title>
 
 <style>
 
@@ -62,74 +62,92 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    background:linear-gradient(120deg,#1e3c72,#2a5298);
 }
 
-.container{
-    display:flex;
-    width:800px;
-    height:450px;
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
+/* Glass Card */
+.card{
+    width:350px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(15px);
     box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    color:white;
+    text-align:center;
     animation:fadeIn 1s ease;
 }
 
-.left{
-    width:50%;
-    background:url('https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg') no-repeat center;
-    background-size:cover;
+.card h2{
+    margin-bottom:25px;
 }
 
-.right{
-    width:50%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:30px;
-}
-
-.right h2{
+/* Floating Input */
+.input-box{
+    position:relative;
     margin-bottom:20px;
 }
 
-.input-group{
-    width:100%;
-    margin:10px 0;
-}
-
-.input-group input{
+.input-box input{
     width:100%;
     padding:12px;
+    border:none;
     border-radius:8px;
-    border:1px solid #a91616;
     outline:none;
+    background:rgba(255,255,255,0.2);
+    color:white;
+}
+
+.input-box label{
+    position:absolute;
+    top:50%;
+    left:12px;
+    transform:translateY(-50%);
+    color:#ddd;
+    font-size:14px;
+    pointer-events:none;
     transition:0.3s;
 }
 
-.input-group input:focus{
-    border-color:#2575fc;
-    box-shadow:0 0 5px rgba(0,0,0,0.5);
+/* animasi label */
+.input-box input:focus + label,
+.input-box input:valid + label{
+    top:-8px;
+    font-size:12px;
+    color:#fff;
 }
 
+/* Button */
 button{
     width:100%;
     padding:12px;
     border:none;
     border-radius:8px;
-    background:#2575fc;
+    background:#00c6ff;
     color:white;
     font-size:16px;
     cursor:pointer;
     transition:0.3s;
-    margin-top:10px;
 }
 
 button:hover{
-    background:#6a11cb;
+    background:#0072ff;
     transform:scale(1.05);
+}
+
+/* link */
+.link{
+    margin-top:15px;
+    font-size:14px;
+}
+
+.link a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.link a:hover{
+    text-decoration:underline;
 }
 
 @keyframes fadeIn{
@@ -143,50 +161,33 @@ button:hover{
     }
 }
 
-@media(max-width:768px){
-    .container{
-        flex-direction:column;
-        width:90%;
-        height:auto;
-    }
-
-    .left{
-        width:100%;
-        height:200px;
-    }
-
-    .right{
-        width:100%;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="card">
+    <h2>Login</h2>
 
-    <div class="left"></div>
+    <form method="POST">
 
-    <div class="right">
-        <h2>Welcome</h2>
+        <div class="input-box">
+            <input type="text" name="username" required>
+            <label>Username</label>
+        </div>
 
-        <form method="POST">
+        <div class="input-box">
+            <input type="password" name="password" required>
+            <label>Password</label>
+        </div>
 
-            <div class="input-group">
-                <input type="text" name="username" placeholder="Username" required>
-            </div>
+        <button type="submit" name="login">Masuk</button>
 
-            <div class="input-group">
-                <input type="password" name="password" placeholder="Password" required>
-            </div>
+        <div class="link">
+            <p>Belum punya akun? <a href="#">Daftar</a></p>
+        </div>
 
-            <button type="submit" name="login">Login</button>
-
-        </form>
-    </div>
-
+    </form>
 </div>
 
 </body>

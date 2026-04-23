@@ -19,7 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MUAZIJAN PRATAMA | Starter</title>
+  <title>DAVA| Starter</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">ASELOLE</span>
+      <span class="brand-text font-weight-light">WEBSITE KU</span>
     </a>
 
     <!-- Sidebar -->
@@ -91,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="WhatsApp Image 2026-04-01 at 23.56.02.jpeg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">MUAZIJAN PRATAMA</a>
+          <a href="#" class="d-block">DAVA</a>
         </div>
       </div>
 
@@ -158,12 +158,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
 
-             <li class="nav-item">
-                <a href="starter.php?page=detail" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Detail jadwal</p>
-                </a>
-              </li>
 
 
 
