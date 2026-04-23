@@ -2,24 +2,45 @@
 session_start();
 include "config/koneksi.php";
 
-if(isset($_POST['login'])){
+if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = mysqli_query($conn,"SELECT * FROM admin WHERE username='$username' AND password='$password'");
-    $cek = mysqli_num_rows($query);
+    $query = mysqli_query($conn, "
+        SELECT * FROM admin 
+        WHERE username='$username'
+    ");
 
-    if($cek > 0){
-        $_SESSION['username']=$username;
-        header("location:starter.php");
-    }else{
-        echo "<script>alert('Username atau Password salah');</script>";
+    $data = mysqli_fetch_array($query);
+
+    if ($data) {
+
+        if ($password == $data['password']) {
+
+            $_SESSION['username'] = $data['username'];
+            $_SESSION['level']    = $data['role'];
+
+            // Jika password masih default
+            if ($data['password'] == '1234') {
+
+                header("Location:starter.php?page=ganti_password");
+
+            } else {
+
+                header("Location:starter.php");
+
+            }
+
+        } else {
+            echo "<script>alert('Password salah');</script>";
+        }
+
+    } else {
+        echo "<script>alert('Username tidak ditemukan');</script>";
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -33,7 +54,7 @@ if(isset($_POST['login'])){
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
@@ -41,9 +62,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background: linear-gradient(135deg,#6a11cb,#2575fc);
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
 }
-
 
 .container{
     display:flex;
@@ -53,8 +73,8 @@ body{
     border-radius:15px;
     overflow:hidden;
     box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:fadeIn 1s ease;
 }
-
 
 .left{
     width:50%;
@@ -71,11 +91,9 @@ body{
     padding:30px;
 }
 
-
 .right h2{
     margin-bottom:20px;
 }
-
 
 .input-group{
     width:100%;
@@ -93,9 +111,8 @@ body{
 
 .input-group input:focus{
     border-color:#2575fc;
-    box-shadow:0 0 5px rgba(7, 7, 7, 0.5);
+    box-shadow:0 0 5px rgba(0,0,0,0.5);
 }
-
 
 button{
     width:100%;
@@ -115,11 +132,6 @@ button:hover{
     transform:scale(1.05);
 }
 
-/* ANIMASI */
-.container{
-    animation:fadeIn 1s ease;
-}
-
 @keyframes fadeIn{
     from{
         opacity:0;
@@ -130,7 +142,6 @@ button:hover{
         transform:translateY(0);
     }
 }
-
 
 @media(max-width:768px){
     .container{
@@ -162,6 +173,7 @@ button:hover{
         <h2>Welcome</h2>
 
         <form method="POST">
+
             <div class="input-group">
                 <input type="text" name="username" placeholder="Username" required>
             </div>
@@ -171,8 +183,8 @@ button:hover{
             </div>
 
             <button type="submit" name="login">Login</button>
-        </form>
 
+        </form>
     </div>
 
 </div>

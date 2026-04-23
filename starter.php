@@ -165,6 +165,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
 
+
+
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -244,7 +246,7 @@ if ($page == "") {
 
 
 
-                <a href="starter.php?page=dashboard" class="card-link">kembali</a>
+                <a href="starter.php?page=ganti_password" class="card-link">kembali</a>
                 
               </div>
             </div>
